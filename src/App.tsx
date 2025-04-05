@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ProgressBar from './components/ProgressBar';
+import Card from './components/Card';
+import CardContainer from './components/CardContainer';
+import { Drawer } from 'antd';
+
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='w-full bg-black h-[100%]'>
+      <div className="p-4 mx-auto max-w-[1200px]  pt-5 ">
+        <ProgressBar />
+        <div className='w-full h-10 text-center mt-[50px] py-5'>
+          <h1 className='text-3xl md:text-5xl text-white'>Choose A Perfect Skip Size</h1>
+          <h1 className='text-base text-white font-light mt-5'>Select the skip size that best suits your needs</h1>
+        </div>
+
+
+        <div className='pt-[150px]'>
+          <CardContainer />
+
+        </div>
+      </div>
     </div>
   );
 }
