@@ -2,49 +2,51 @@ import React from 'react';
 import { ConfigProvider, Steps } from 'antd';
 
 
-const description = '';
-
 const ProgressBar = () => {
     return (
         <ConfigProvider
             theme={{
-                token: {
-
-                    colorText: "#ffffff",
-                    colorPrimary: "#1677ff"
-                },
+                components: {
+                    Steps: {
+                        colorText: '#FFFFFF', // White text for all steps
+                        colorTextDisabled: '#FFFFFF', // White text for disabled/wait steps
+                        colorTextLabel: '#FFFFFF',    // White text for labels
+                        colorBgContainer: '#808080',  // Grey background
+                        colorFillContent: '#808080',
+                    }
+                }
             }}
         >
             <Steps
                 className='custom-steps'
-                current={2}
+                current={3}
                 percent={100}
 
                 labelPlacement="vertical"
                 items={[
                     {
                         title: 'Post Code',
-                        description,
+
                     },
                     {
                         title: 'Waste Type',
-                        description,
+
                     },
                     {
                         title: 'Select Skip',
-                        description,
+
                     },
                     {
                         title: 'Permit Check',
-                        description,
+
                     },
                     {
                         title: 'Choose Date',
-                        description,
+
                     },
                     {
                         title: 'Payment',
-                        description,
+
                     },
 
                 ]}

@@ -27,7 +27,7 @@ const DrawerModal = ({ open, onClose, selectedSkip }: DrawerProps) => {
                 height={200}
             >
                 <div className='flex flex-row gap-5'>
-                    <img src={garden} alt="" className='h-[90px] mb-[20px]' />
+                    <img src={garden} alt="" className=' h-[60px] md:pt-[10px]  md:h-[90px] mb-[10px] md:mb-[20px]' />
                     <div className='flex flex-col gap-3'>
                         <p className='font-bold text-lg'>£{totalPrice} </p>
                         <div className='flex gap-3'>

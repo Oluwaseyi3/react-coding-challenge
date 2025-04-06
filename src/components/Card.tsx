@@ -6,6 +6,7 @@ import { GiCancel } from "react-icons/gi";
 import { ComponentType } from 'react';
 import { totalPriceCalculator } from './utils/totalPriceCalculator';
 
+
 const CalendarIcon = FaCalendarAlt as ComponentType;
 const Check = FaCheckCircle as ComponentType;
 const Cancel = GiCancel as ComponentType;
@@ -33,6 +34,7 @@ export type { SkipData };
 type CardProps = {
     data: SkipData;
     onClick?: () => void;
+    children?: React.ReactNode;
 
 }
 
@@ -54,7 +56,7 @@ const Card = ({ data, onClick }: CardProps) => {
     return (
         <div className="px-5 pb-[100px]">
             <div
-                className="relative ] flex w-80 flex-col rounded-xl bg-white from-white to-gray-50 bg-clip-border text-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="relative ] flex w-80  flex-col rounded-xl bg-white from-white to-gray-50 bg-clip-border text-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
                 <div
                     className="relative mx-4 -mt-6 h-50 overflow-hidden rounded-xl bg-clip-border"

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card, { SkipData } from './Card'
 import DrawerModal from './DrawerModal';
+import { Spin } from 'antd';
 
 
 const CardContainer = () => {
@@ -14,12 +15,18 @@ const CardContainer = () => {
     const [selectedSkip, setSelectedSkip] = useState<SkipData | null>(null);
     const [totalAmount, setTotalAmount] = React.useState<string>("");
 
+    const API = 'https://app.wewantwaste.co.uk/api/skips/by-location';
+
 
     useEffect(() => {
         const fetchSkipData = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`https://app.wewantwaste.co.uk/api/skips/by-location?postcode=${postcode}&area=${area}`);
+                const response = await fetch(`${API}?postcode=${postcode}&area=${area}`);
+
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
 
                 const data = await response.json();
                 setSkipsData(data);
@@ -43,8 +50,19 @@ const CardContainer = () => {
 
 
     return (
-        <div className='flex flex-col items-center gap-[100px]'>
-
+        <div className='flex flex-col items-center gap-[100px] h-full'>
+            {
+                loading && (
+                    <div className="flex justify-center items-start w-full h-dvh">
+                        <Spin size="large" />
+                    </div>
+                )
+            }
+            {error && (
+                <div className="text-center text-red-500 py-8">
+                    <p>{error}</p>
+                </div>
+            )}
             {!error && !loading && (
                 <div className="flex flex-wrap justify-center">
                     {skipsData.length > 0 ? (
