@@ -61,7 +61,7 @@ const Card = ({ data, onClick }: CardProps) => {
                 <div
                     className="relative mx-4 -mt-6 h-50 overflow-hidden rounded-xl bg-clip-border"
                 >
-                    <img src={garden} alt="yard skip" />
+                    <img src={garden} alt="yard skip" loading="lazy" />
                 </div>
                 <div className="p-6">
                     <h5
