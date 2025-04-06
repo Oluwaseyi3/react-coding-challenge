@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProgressBar from './components/ProgressBar';
-import Card from './components/Card';
 import CardContainer from './components/CardContainer';
-import { Drawer } from 'antd';
+
 
 
 function App() {
@@ -16,11 +15,8 @@ function App() {
           <h1 className='text-3xl md:text-5xl text-white'>Choose A Perfect Skip Size</h1>
           <h1 className='text-base text-white font-light mt-5'>Select the skip size that best suits your needs</h1>
         </div>
-
-
         <div className='pt-[150px]'>
           <CardContainer />
-
         </div>
       </div>
     </div>

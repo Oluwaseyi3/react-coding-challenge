@@ -8,10 +8,10 @@ const ProgressBar = () => {
             theme={{
                 components: {
                     Steps: {
-                        colorText: '#FFFFFF', // White text for all steps
-                        colorTextDisabled: '#FFFFFF', // White text for disabled/wait steps
-                        colorTextLabel: '#FFFFFF',    // White text for labels
-                        colorBgContainer: '#808080',  // Grey background
+                        colorText: '#FFFFFF',
+                        colorTextDisabled: '#FFFFFF',
+                        colorTextLabel: '#FFFFFF',
+                        colorBgContainer: '#808080',
                         colorFillContent: '#808080',
                     }
                 }
